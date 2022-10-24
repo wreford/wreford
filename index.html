@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Focus.Pink</title>
+	<title>Focus</title>
 	<style type="text/css">
 html, body
 {
@@ -41,8 +41,6 @@ html, body
 	border-radius: 10px;
 	box-shadow: 3px 3px 0 0 rgba(0,0,0,0.3);
 }
-#main a { color: #526ffc; }
-#main a:hover, #main a:active { color: #f2f2f2; background: #ea316e; }
 #footer
 {
 	background-color: #b1e3fa;
@@ -65,9 +63,8 @@ html, body
 </head>
 <body>
 <div id="wrapper">
-	<h1 id="title">Focus.Pink</h1>
+	<h1 id="title">Focus</h1>
 	<div id="main">
-		<center style="margin-bottom:10px">for Nyah, Keira, and Lily</center>
 		<center><canvas id="canvas" width="750" height="500" style="max-width:100%;background:#000;vertical-align:middle"></canvas></center>
 	</div>
 </div>
@@ -113,7 +110,7 @@ var DoLoad = function()
 {
 	Msg(TXT.LOAD);
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'focus.js');
+	xhr.open('GET', 'index.js');
 	xhr.onprogress = function(e)
 	{
 		if (!e.lengthComputable || ctx.pCnt++ < 5) return;
@@ -131,7 +128,7 @@ var DoLoad = function()
 		setTimeout(function()
 		{
 			window.onerror = function(e,u,l) { Fail(e+'<br>('+u+':'+l+')'); };
-			Module = { TOTAL_MEMORY: 1024*1024*200, TOTAL_STACK: 1024*1024*2, currentScriptUrl: '-', preInit: DoExecute };
+			Module = { TOTAL_MEMORY: 1024*1024*250, TOTAL_STACK: 1024*1024*2, currentScriptUrl: '-', preInit: DoExecute };
 			var s = document.createElement('script'), d = document.documentElement;
 			s.textContent = xhr.response;
 			d.appendChild(s);
